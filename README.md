@@ -19,7 +19,7 @@ Antes de iniciar o projeto é preciso ter na maquina:
 
 ### Rodando o Back
 
- * Clonar o repositorio
+ * Clonar o repositório
  *   $ git clone <https://github.com/lucasrasec/MarvelComics.git>
  * Acessar a pasta do projeto
  * Instalar dependencias
@@ -29,7 +29,8 @@ Antes de iniciar o projeto é preciso ter na maquina:
  
 ### Importante
 
- *Ao iniciar o projeto renomear o arquivo "example.env" para ".env" e adicionar as chaves publica e privada da API da Marvel
+ * Ao Abrir o projeto renomear o arquivo "example.env" para ".env" e adicionar as chaves publica e privada da API da Marvel(Diferente para casa Usuário). Ao colocar as chaves não é preciso colocalas entre aspas.
+ * Boa parte dos quadrinhos não mostra uma descrição por que a API da Marvel retorna eles com o atributo null
 
 ### Tecnologias Ultizadas
 
