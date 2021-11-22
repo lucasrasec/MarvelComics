@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'RobotoSlab';
+    src: url('./fonts/RobotoSlab-VariableFont_wght.ttf');
+}
+
+body {
+    background-color: gainsboro;
+}
+
+div.card-title.h5 { 
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    white-space: nowrap;
+}
+
+div.map-wrapper {
+    height: 200px;
+    margin-bottom: 1rem;
+}
