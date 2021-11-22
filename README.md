@@ -19,12 +19,12 @@ Antes de iniciar o projeto é preciso ter na maquina:
 
 ### Rodando o Back
 
- *Clonar o repositorio
+ * Clonar o repositorio
  $ git clone <https://github.com/lucasrasec/MarvelComics.git>
- *Acessar a pasta do projeto
- *Instalar dependencias
+ * Acessar a pasta do projeto
+ * Instalar dependencias
  $ npm install
- *Executar a aplicação 
+ * Executar a aplicação 
  npm start
  
 ### Importante
