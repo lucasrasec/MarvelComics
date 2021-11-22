@@ -2,11 +2,6 @@
 
 <p>Projeto para testar minhas habilidades. Se trata de uma aplicação de lista de quadrinhos da Marvel com implementação do Google Maps para o envio dos quadrinhos selecionados</p>
 
-<!--ts-->
-
-
-<!--te-->
-
 # Status do Projeto
 
 <p>O projeto ainda precisa da adição de algumas funcionalidades</p>
@@ -24,7 +19,24 @@ Antes de iniciar o projeto é preciso ter na maquina:
 
 ### Rodando o Back
 
+ *Clonar o repositorio
+ $ git clone <https://github.com/lucasrasec/MarvelComics.git>
+ *Acessar a pasta do projeto
+ *Instalar dependencias
+ $ npm install
+ *Executar a aplicação 
+ npm start
+ 
+### Importante
 
+ *Ao iniciar o projeto renomear o arquivo "example.env" para ".env" e adicionar as chaves publica e privada da API da Marvel
+
+### Tecnologias Ultizadas
+
+ * Node.js
+ * React
+ * Bootstrap
+ * JavaScript
 
 
 
