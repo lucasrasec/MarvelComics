@@ -1,7 +1,4 @@
-import React, { useContext } from "react";
-
-import Modal from "../Modal"
-import { AppContext } from "../../context/appContext";
+import React from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 
 
@@ -14,7 +11,6 @@ const numberWithCommas = (x) => {
 const ListItem = ({ comic }) => {
     const img = comic.thumbnail.path + "/standard_small." + comic.thumbnail.extension
     const title = comic.title
-    const description = comic.description || "Descrição não disponivel"
 
     return (
         <Container>

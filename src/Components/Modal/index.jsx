@@ -1,7 +1,5 @@
-import React, { useContext } from "react";
-import { Modal, Button, Container, Row } from "react-bootstrap";
-
-import { AppContext, AppDispatchContext } from "../../context/appContext";
+import React from "react";
+import { Modal, Button } from "react-bootstrap";
 
 
 const AppModal = ({ size, isOpen, handleClose, title, hasFooter = false, buttonLabel, children }) => {

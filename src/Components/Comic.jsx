@@ -21,7 +21,7 @@ const Comic = ({ comic }) => {
     }
 
     return (
-        <Card style={{ width: '15rem', marginBottom: "1rem" }}>
+        <Card id={comic.id} style={{ width: '15rem', marginBottom: "1rem" }}>
             <Card.Img variant="top" src={img} />
             <Card.Body>
                 <Card.Title>{title}</Card.Title>

@@ -1,6 +1,6 @@
-import React, { useContext, useEffect } from "react";
-import { Container, Row, Col, Form } from "react-bootstrap";
-import { AppContext, AppDispatchContext } from "../../context/appContext";
+import React, { useContext } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import { AppContext } from "../../context/appContext";
 import Comic from "../Comic";
 
 
