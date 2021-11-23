@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Marvel Comics
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p>Projeto para testar minhas habilidades. Se trata de uma aplicação de lista de quadrinhos da Marvel com implementação do Google Maps para o envio dos quadrinhos selecionados</p>
 
-## Available Scripts
+# Status do Projeto
 
-In the project directory, you can run:
+<p>O projeto ainda precisa da adição de algumas funcionalidades</p>
 
-### `npm start`
+ * A função de Remover do carrinho não foi implementada
+ * Trazer o endereço a partir das coordenadas. Mas ao clicar em um ponto do mapa é mostrado o retorno com as cordenadas no console.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+###Pré-Requisitos
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Antes de iniciar o projeto é preciso ter na maquina:
 
-### `npm test`
+  * [Node.js](https://nodejs.org/en/)
+  * [Git](https://git-scm.com)
+  * [Bootstrap](https://getbootstrap.com)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Rodando o Back
 
-### `npm run build`
+ * Clonar o repositório
+ *   $ git clone <https://github.com/lucasrasec/MarvelComics.git>
+ * Acessar a pasta do projeto
+ * Instalar dependencias
+ *   $ npm install
+ * Executar a aplicação 
+ *   npm start
+ 
+### Importante
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ * Ao Abrir o projeto renomear o arquivo "example.env" para ".env" e adicionar as chaves publica e privada da API da Marvel(Diferente para casa Usuário). Ao colocar as chaves não é preciso colocalas entre aspas.
+ * Boa parte dos quadrinhos não mostra uma descrição por que a API da Marvel retorna eles com o atributo null
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Tecnologias Ultizadas
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ * Node.js
+ * React
+ * Bootstrap
+ * JavaScript
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
