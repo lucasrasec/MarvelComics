@@ -5,13 +5,16 @@ import 'bootstrap/dist/js/bootstrap.js';
 
 import Content from './Components/Content'
 import { AppProvider } from './context/appContext'
+import { CartProvider } from './context/CartContext'
 
 export default props => {
-    return ( 
+    return (
         <AppProvider>
-            <div className = "App" >
-                <Content />
-            </div>
+            <CartProvider>
+                <div className="App" >
+                    <Content />
+                </div>
+            </CartProvider>
         </AppProvider>
     )
 }

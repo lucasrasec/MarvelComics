@@ -1,13 +1,13 @@
 import React, { useContext, useState } from "react";
 import { Card, Button, Row } from "react-bootstrap";
 
-import {AppDispatchContext, AppContext} from "../context/appContext";
+import { AppContext } from "../context/appContext";
 import ComicDetails from "./ComicDetails";
+import { CartDispatchContext } from "../context/CartContext"
 
 const Comic = ({ comic }) => {
     const [isModalOpen, setIsModalOpen] = useState(false)
-    const { selection } = useContext(AppContext);
-    const dispatcher = useContext(AppDispatchContext);
+    const dispatcher = useContext(CartDispatchContext)
 
     const img = comic.thumbnail.path + "/portrait_fantastic." + comic.thumbnail.extension
     const title = comic.title
@@ -17,7 +17,7 @@ const Comic = ({ comic }) => {
     }
 
     const increment = () => {
-        dispatcher('selection', [...selection, comic])
+        dispatcher(comic)
         alert('Quadrinho adicionado: ' + comic.title)
     }
 
