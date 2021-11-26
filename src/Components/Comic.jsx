@@ -6,7 +6,7 @@ import ComicDetails from "./ComicDetails";
 
 const Comic = ({ comic }) => {
     const [isModalOpen, setIsModalOpen] = useState(false)
-    const { cart } = useContext(AppContext);
+    const { selection } = useContext(AppContext);
     const dispatcher = useContext(AppDispatchContext);
 
     const img = comic.thumbnail.path + "/portrait_fantastic." + comic.thumbnail.extension
@@ -17,7 +17,8 @@ const Comic = ({ comic }) => {
     }
 
     const increment = () => {
-        dispatcher('cart', [...cart, comic])
+        dispatcher('selection', [...selection, comic])
+        alert('Quadrinho adicionado: ' + comic.title)
     }
 
     return (

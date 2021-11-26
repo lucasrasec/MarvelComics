@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Button } from "react-bootstrap";
 import Conection from "../services/Conection";
 import Navbar from "./Navbar"
 import { AppContext, AppDispatchContext } from "../context/appContext";
@@ -14,24 +14,17 @@ const Content = () => {
 
     useEffect(() => {
         const search = async () => {
-                const response = await Conection.get(`/comics?format=comic&orderBy=-focDate&limit=8&offset=${page}`)
+                const response = query === null ? await Conection.get(`/comics?format=comic&orderBy=-focDate&limit=8&offset=${page}`)
+                .then(({ data }) => dispatcher('comics', data.data.results)) :
+                await Conection.get(`/comics?format=comic&orderBy=-focDate&limit=8&offset=${page}${query && '&titleStartsWith='+query}`)
                 .then(({ data }) => dispatcher('comics', data.data.results))
             }
             search()
-        }, [])
-
-    useEffect(() => {
-        const search = async () => {
-            const response = await Conection.get(`/comics?format=comic&orderBy=-focDate&limit=8&offset=${page}${query && '&titleStartsWith='+query}`)
-            .then(({ data }) => dispatcher('comics', data.data.results))
-        }
-        search()
-    }, [page])
+        }, [page])
 
     const load = () => {
         const value = page + 8
         dispatcher('page', value)
-        console.log(page);
         if (page === 0) {
             setStart(!start)
         }
@@ -40,7 +33,6 @@ const Content = () => {
     const back = () => {
         const value = page - 8
         dispatcher('page', value)
-        console.log(page);
         if (page === 0) {
             setStart(!start)
         }

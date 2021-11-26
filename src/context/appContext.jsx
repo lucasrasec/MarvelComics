@@ -6,18 +6,14 @@ const AppDispatchContext = createContext(undefined);
 function AppProvider({ children }) {
   const [ctx, setCtx] = useState({
         comics: [],
-        cart: [],
+        selection: [],
         page: 0,
         query: null,
         isModalOpen: false,
     });
 
     const dispatcher = (key, value) => {
-        // if (key === 'comics' || key === 'cart') {
-        //     ctx[key] = [...ctx[key], value];
-        // } else {
             ctx[key] = value;
-        // }
 
         setCtx({ ...ctx });
     };

@@ -11,7 +11,7 @@ const AppNavbar = () => {
 
     const toggleCart = () => setShow(!show);
 
-    const { page } = useContext(AppContext);
+    const { page, selection } = useContext(AppContext);
     const dispatcher = useContext(AppDispatchContext);
 
     const searchComics = (query) =>
