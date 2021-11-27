@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useState } from "react";
 
 const CartContext = createContext(undefined);
 const CartDispatchContext = createContext(undefined);
@@ -6,13 +6,9 @@ const CartDispatchContext = createContext(undefined);
 function CartProvider({ children }) {
     const [cart, setCart] = useState([])
 
-    const dispatcher = (value) => {
-        setCart([...cart, value]);
+    const dispatcher = (cart) => {
+        setCart(cart);
     };
-
-    useEffect(() => {
-        console.log(cart);
-    }, [cart])
 
   return (
      <CartContext.Provider value={cart}>

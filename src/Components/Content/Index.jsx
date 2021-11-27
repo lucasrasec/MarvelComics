@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Container, Row, Button } from "react-bootstrap";
-import Conection from "../services/Conection";
-import Navbar from "./Navbar"
-import { AppContext, AppDispatchContext } from "../context/appContext";
-import Gallery from "./Gallery";
+import Conection from "../../services/Conection";
+import Navbar from "../Navbar"
+import { AppContext, AppDispatchContext } from "../../context/appContext";
+import Gallery from "../Gallery";
 
 
 const Content = () => {
@@ -14,10 +14,13 @@ const Content = () => {
 
     useEffect(() => {
         const search = async () => {
-                const response = query === null ? await Conection.get(`/comics?format=comic&orderBy=-focDate&limit=8&offset=${page}`)
-                .then(({ data }) => dispatcher('comics', data.data.results)) :
-                await Conection.get(`/comics?format=comic&orderBy=-focDate&limit=8&offset=${page}${query && '&titleStartsWith='+query}`)
-                .then(({ data }) => dispatcher('comics', data.data.results))
+                if (!query) {
+                    const { data } = await Conection.get(`/comics?format=comic&orderBy=-focDate&limit=8&offset=${page}`);
+                    return dispatcher('comics', data.data.results);
+                }
+
+                const { data } = await Conection.get(`/comics?format=comic&orderBy=-focDate&limit=8&offset=${page}${query && '&titleStartsWith='+ query}`)
+                return dispatcher('comics', data.data.results);
             }
             search()
         }, [page])

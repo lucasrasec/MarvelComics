@@ -3,7 +3,7 @@ import { BsCart3 } from "react-icons/bs";
 import { Container, Navbar, Nav, Form } from "react-bootstrap";
 import { AppContext, AppDispatchContext } from "../../context/appContext";
 import Conection from "../../services/Conection";
-import Cart from "../cart";
+import Cart from "../Cart";
 
 
 const AppNavbar = () => {
@@ -11,7 +11,7 @@ const AppNavbar = () => {
 
     const toggleCart = () => setShow(!show);
 
-    const { page, selection } = useContext(AppContext);
+    const { page } = useContext(AppContext);
     const dispatcher = useContext(AppDispatchContext);
 
     const searchComics = (query) =>

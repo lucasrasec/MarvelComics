@@ -3,7 +3,7 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 
-import Content from './Components/Content'
+import Content from './Components/Content/Index'
 import { AppProvider } from './context/appContext'
 import { CartProvider } from './context/CartContext'
 
