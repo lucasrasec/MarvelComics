@@ -4,10 +4,8 @@
 
 # Status do Projeto
 
-<p>O projeto ainda precisa da adição de algumas funcionalidades</p>
+<p>Concluido</p>
 
- * A função de Remover do carrinho não foi implementada
- * Trazer o endereço a partir das coordenadas. Mas ao clicar em um ponto do mapa é mostrado o retorno com as cordenadas no console.
 
 ###Pré-Requisitos
 
