@@ -11,7 +11,7 @@ function CartProvider({ children }) {
         case 'remove':
           setCart(cart.filter(cartItem => cartItem !== value));
           break;
-        case 'add':
+        default:
           setCart([...cart, value])
           break;
       }
