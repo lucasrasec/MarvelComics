@@ -14,23 +14,11 @@ const AppNavbar = () => {
     const { page, query } = useContext(AppContext);
     const dispatcher = useContext(AppDispatchContext);
 
-    const searchComics = (query) =>
-        Conection.get(`/comics?`, {
-            params: {
-                format: 'comic',
-                orderBy: '-focDate',
-                limit: 8,
-                offset: page,
-                titleStartsWith: query
-            }
-        })
 
     const debounceEvent = (fn, wait = 1000, time) =>  (...args) =>
             clearTimeout(time, time = setTimeout(() => fn(...args), wait))
 
     function handleKeyUp(event) {
-        searchComics(event.target.value)
-        .then(({ data }) => dispatcher("comics", data.data.results))
         dispatcher('query', event.target.value)
     }
 
