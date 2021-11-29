@@ -17,7 +17,7 @@ const Comic = ({ comic }) => {
     }
 
     const increment = () => {
-        dispatcher([...cart, comic])
+        dispatcher(comic, 'add')
         alert('Quadrinho adicionado: ' + comic.title)
     }
 

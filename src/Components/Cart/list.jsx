@@ -9,7 +9,7 @@ const List = () => {
     const dispatcher = useContext(CartDispatchContext)
 
     const remove = (item) => {
-        return dispatcher(cart.filter(cartItem => cartItem !== item));
+        dispatcher(item, 'remove')
     }
 
     if (!cart.length) return <h2>Carrinho vazio</h2>

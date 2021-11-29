@@ -6,8 +6,15 @@ const CartDispatchContext = createContext(undefined);
 function CartProvider({ children }) {
     const [cart, setCart] = useState([])
 
-    const dispatcher = (cart) => {
-        setCart(cart);
+    const dispatcher = (value, key) => {
+      switch(key) {
+        case 'remove':
+          setCart(cart.filter(cartItem => cartItem !== value));
+          break;
+        case 'add':
+          setCart([...cart, value])
+          break;
+      }
     };
 
   return (
