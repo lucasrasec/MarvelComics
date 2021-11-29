@@ -12,18 +12,35 @@ const Content = () => {
     const { page, query } = useContext(AppContext);
     const dispatcher = useContext(AppDispatchContext);
 
+    //
+
     useEffect(() => {
         const search = async () => {
                 if (!query) {
-                    const { data } = await Conection.get(`/comics?format=comic&orderBy=-focDate&limit=8&offset=${page}`);
+                    const { data } = await Conection.get('/comics?', {
+                        params: {
+                            format: 'comic',
+                            orderBy: '-focDate',
+                            limit: 8,
+                            offset: page
+                        }
+                    });
                     return dispatcher('comics', data.data.results);
                 }
 
-                const { data } = await Conection.get(`/comics?format=comic&orderBy=-focDate&limit=8&offset=${page}${query && '&titleStartsWith='+ query}`)
+                const { data } = await Conection.get(`/comics?`, {
+                    params: {
+                        format: 'comic',
+                        orderBy: '-focDate',
+                        limit: 8,
+                        offset: page,
+                        titleStartsWith: query
+                    }
+                })
                 return dispatcher('comics', data.data.results);
             }
             search()
-        }, [page])
+        }, [page, query])
 
     const load = () => {
         const value = page + 8

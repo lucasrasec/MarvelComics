@@ -11,11 +11,19 @@ const AppNavbar = () => {
 
     const toggleCart = () => setShow(!show);
 
-    const { page } = useContext(AppContext);
+    const { page, query } = useContext(AppContext);
     const dispatcher = useContext(AppDispatchContext);
 
     const searchComics = (query) =>
-        Conection.get(`/comics?format=comic&orderBy=-focDate&limit=8&offset=${page}${query && '&titleStartsWith='+query}`)
+        Conection.get(`/comics?`, {
+            params: {
+                format: 'comic',
+                orderBy: '-focDate',
+                limit: 8,
+                offset: page,
+                titleStartsWith: query
+            }
+        })
 
     const debounceEvent = (fn, wait = 1000, time) =>  (...args) =>
             clearTimeout(time, time = setTimeout(() => fn(...args), wait))
@@ -23,6 +31,7 @@ const AppNavbar = () => {
     function handleKeyUp(event) {
         searchComics(event.target.value)
         .then(({ data }) => dispatcher("comics", data.data.results))
+        dispatcher('query', event.target.value)
     }
 
     useEffect(() => {
