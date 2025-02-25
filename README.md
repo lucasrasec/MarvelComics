@@ -1,4 +1,4 @@
-# Marvel Comics
+# Comics Store
 
 <p>Projeto para testar minhas habilidades. Se trata de uma aplicação de lista de quadrinhos da Marvel com implementação do Google Maps para o envio dos quadrinhos selecionados</p>
 
